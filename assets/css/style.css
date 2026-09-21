@@ -33,6 +33,10 @@ html {
   scroll-behavior: smooth;
 }
 
+[id] {
+  scroll-margin-top: 88px;
+}
+
 body {
   margin: 0;
   background: var(--bg);
