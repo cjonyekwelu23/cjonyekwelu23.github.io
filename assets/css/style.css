@@ -789,3 +789,45 @@ section {
     transform: none;
   }
 }
+
+/* ---------- Chapter phase transitions ---------- */
+
+.phase-wrap {
+  position: relative;
+  height: 180vh;
+}
+
+.phase-hero {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  border-bottom: none;
+  background: var(--bg);
+}
+
+.phase-hero .container {
+  width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .phase-wrap {
+    height: auto;
+  }
+
+  .phase-hero {
+    position: static;
+    height: auto;
+    padding: 64px 0 40px;
+    border-bottom: 1px solid var(--border);
+    opacity: 1 !important;
+  }
+}
+
+@media (max-width: 720px) {
+  .phase-wrap {
+    height: 140vh;
+  }
+}

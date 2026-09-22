@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   var revealTargets = document.querySelectorAll(
-    "main .card, main .media-item, main .timeline-item, main .page-hero .container, main .section-head"
+    "main .card, main .media-item, main .timeline-item, main .section-head"
   );
 
   if (revealTargets.length && "IntersectionObserver" in window) {
@@ -64,5 +64,48 @@ document.addEventListener("DOMContentLoaded", function () {
     revealTargets.forEach(function (el) {
       revealObserver.observe(el);
     });
+  }
+
+  var phaseHeroes = Array.prototype.slice.call(document.querySelectorAll(".phase-hero"));
+  var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (phaseHeroes.length && !reduceMotion) {
+    var ticking = false;
+
+    var updatePhaseHeroes = function () {
+      var vh = window.innerHeight;
+
+      phaseHeroes.forEach(function (el) {
+        var top = el.getBoundingClientRect().top;
+        var opacity;
+
+        if (top >= 0) {
+          // Approaching from below: fade in as it slides up to the pin point.
+          opacity = 1 - Math.min(Math.max(top / vh, 0), 1);
+        } else {
+          // Pinned, then fading out as its wrap scrolls past and the
+          // chapter's normal content is about to take over.
+          opacity = 1 - Math.min(Math.max(-top / (vh * 0.6), 0), 1);
+        }
+
+        el.style.opacity = opacity;
+      });
+
+      ticking = false;
+    };
+
+    window.addEventListener(
+      "scroll",
+      function () {
+        if (!ticking) {
+          window.requestAnimationFrame(updatePhaseHeroes);
+          ticking = true;
+        }
+      },
+      { passive: true }
+    );
+
+    window.addEventListener("resize", updatePhaseHeroes);
+    updatePhaseHeroes();
   }
 });
