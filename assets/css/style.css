@@ -754,3 +754,38 @@ section {
   .media-grid { grid-template-columns: repeat(2, 1fr); }
   .stat-badge { flex: 1 1 auto; }
 }
+
+/* ---------- Scroll reveal ---------- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.grid-3 > .reveal:nth-child(2),
+.grid-2 > .reveal:nth-child(2),
+.media-grid > .reveal:nth-child(2),
+.impact-grid > .reveal:nth-child(2) {
+  transition-delay: 0.1s;
+}
+
+.grid-3 > .reveal:nth-child(3),
+.media-grid > .reveal:nth-child(3),
+.impact-grid > .reveal:nth-child(3) {
+  transition-delay: 0.2s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}

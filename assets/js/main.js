@@ -39,4 +39,30 @@ document.addEventListener("DOMContentLoaded", function () {
       observer.observe(section);
     });
   }
+
+  var revealTargets = document.querySelectorAll(
+    "main .card, main .media-item, main .timeline-item, main .page-hero .container, main .section-head"
+  );
+
+  if (revealTargets.length && "IntersectionObserver" in window) {
+    revealTargets.forEach(function (el) {
+      el.classList.add("reveal");
+    });
+
+    var revealObserver = new IntersectionObserver(
+      function (entries, obs) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: "0px 0px -10% 0px", threshold: 0.1 }
+    );
+
+    revealTargets.forEach(function (el) {
+      revealObserver.observe(el);
+    });
+  }
 });
