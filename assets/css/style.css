@@ -833,3 +833,140 @@ section {
     height: 140vh;
   }
 }
+
+/* ---------- Link tree page ---------- */
+
+.linktree {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+}
+
+.linktree-card {
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+}
+
+.linktree-avatar {
+  width: 104px;
+  height: 104px;
+  border-radius: 50%;
+  padding: 3px;
+  margin: 0 auto 20px;
+  background: linear-gradient(135deg, var(--accent), rgba(63, 211, 240, 0.25) 60%, rgba(63, 211, 240, 0.5));
+}
+
+.linktree-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.linktree-card h1 {
+  font-size: 1.5rem;
+  margin-bottom: 4px;
+}
+
+.linktree-role {
+  color: var(--accent-text);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+  display: block;
+}
+
+.link-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.link-btn {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 16px 20px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: left;
+  transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.link-btn:hover {
+  background: var(--chip-bg);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(63, 211, 240, 0.18);
+}
+
+.link-btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--chip-bg);
+  color: var(--accent-text);
+  flex-shrink: 0;
+}
+
+.link-btn-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.link-btn-text {
+  flex: 1;
+}
+
+.link-btn-sub {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.link-btn.link-btn-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+
+.link-btn.link-btn-primary .link-btn-icon {
+  background: rgba(6, 32, 40, 0.12);
+  color: var(--accent-ink);
+}
+
+.link-btn.link-btn-primary .link-btn-sub {
+  color: var(--accent-ink);
+  opacity: 0.75;
+}
+
+.link-btn.link-btn-primary:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+.linktree-footer {
+  margin-top: 40px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.linktree-footer a {
+  color: var(--accent-text);
+  font-weight: 600;
+}
