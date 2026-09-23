@@ -4,15 +4,17 @@
    ============================================================ */
 
 :root {
-  --bg: #0E1420;
-  --panel: #1B2436;
-  --border: #2A3550;
-  --text: #EDF1F7;
-  --text-secondary: #9AA6BC;
-  --text-muted: #8894A8;
+  --bg: #FFFFFF;
+  --panel: #FFFFFF;
+  --border: #3FD3F0;
+  --text: #0E1420;
+  --text-secondary: #45526B;
+  --text-muted: #6B7890;
   --accent: #3FD3F0;
-  --accent-hover: #5FDCF5;
-  --chip-bg: rgba(255, 255, 255, 0.04);
+  --accent-text: #0B92AC;
+  --accent-hover: #1EB6D6;
+  --accent-ink: #062028;
+  --chip-bg: rgba(63, 211, 240, 0.08);
 
   --radius-lg: 22px;
   --radius-md: 14px;
@@ -22,7 +24,7 @@
   --font-body: "Inter", system-ui, -apple-system, sans-serif;
 
   --max-width: 1120px;
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 * {
@@ -85,7 +87,7 @@ p {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(14, 20, 32, 0.85);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
 }
@@ -108,7 +110,7 @@ p {
 }
 
 .nav-brand span {
-  color: var(--accent);
+  color: var(--accent-text);
 }
 
 .nav-links {
@@ -136,7 +138,7 @@ p {
 }
 
 .nav-links a.active {
-  color: var(--bg);
+  color: var(--accent-ink);
   background: var(--accent);
 }
 
@@ -176,7 +178,7 @@ p {
 
 .btn-primary {
   background: var(--accent);
-  color: #062028;
+  color: var(--accent-ink);
   box-shadow: 0 0 0 rgba(63, 211, 240, 0);
 }
 
@@ -194,7 +196,7 @@ p {
 
 .btn-ghost:hover {
   border-color: var(--accent);
-  color: var(--accent);
+  color: var(--accent-text);
 }
 
 .chip {
@@ -264,7 +266,7 @@ p {
   height: 168px;
   border-radius: 28px;
   padding: 3px;
-  background: linear-gradient(135deg, var(--accent), rgba(63, 211, 240, 0.15) 60%, var(--border));
+  background: linear-gradient(135deg, var(--accent), rgba(63, 211, 240, 0.25) 60%, rgba(63, 211, 240, 0.5));
   flex-shrink: 0;
 }
 
@@ -278,7 +280,7 @@ p {
 
 .role-tag {
   display: inline-block;
-  color: var(--accent);
+  color: var(--accent-text);
   font-weight: 600;
   font-size: 0.85rem;
   letter-spacing: 0.06em;
@@ -301,7 +303,7 @@ p {
 }
 
 .hero-meta a:hover {
-  color: var(--accent);
+  color: var(--accent-text);
 }
 
 .hero-meta-item {
@@ -347,7 +349,7 @@ section {
 }
 
 .section-label {
-  color: var(--accent);
+  color: var(--accent-text);
   font-weight: 600;
   font-size: 0.82rem;
   letter-spacing: 0.08em;
@@ -442,7 +444,7 @@ section {
 }
 
 .role-dates {
-  color: var(--accent);
+  color: var(--accent-text);
   font-size: 0.86rem;
   font-weight: 600;
   white-space: nowrap;
@@ -542,7 +544,7 @@ section {
 }
 
 .contact-item a:hover {
-  color: var(--accent);
+  color: var(--accent-text);
 }
 
 /* ---------- ASCA page ---------- */
@@ -558,7 +560,7 @@ section {
   font-family: var(--font-display);
   font-size: 2rem;
   font-weight: 700;
-  color: var(--accent);
+  color: var(--accent-text);
   display: block;
   margin-bottom: 6px;
 }
@@ -601,7 +603,7 @@ section {
   display: inline-block;
   background: rgba(63, 211, 240, 0.12);
   border: 1px solid rgba(63, 211, 240, 0.4);
-  color: var(--accent);
+  color: var(--accent-text);
   border-radius: 999px;
   padding: 3px 12px;
   font-size: 0.78rem;
@@ -642,8 +644,8 @@ section {
   background:
     repeating-linear-gradient(
       45deg,
-      rgba(255, 255, 255, 0.02),
-      rgba(255, 255, 255, 0.02) 10px,
+      rgba(63, 211, 240, 0.06),
+      rgba(63, 211, 240, 0.06) 10px,
       transparent 10px,
       transparent 20px
     );
@@ -683,7 +685,7 @@ section {
 }
 
 .footer-links a:hover {
-  color: var(--accent);
+  color: var(--accent-text);
 }
 
 .footer-copy {
